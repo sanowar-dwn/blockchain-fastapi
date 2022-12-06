@@ -44,6 +44,11 @@ class Blockchain:
     def get_genesis_block(self) -> dict:
         return self.chain[0]
 
+    
+    def get_coins(self):
+        total_coins = 12
+        return total_coins
+
     def generate_public_address(self):
         wallet = Wallet()
 

@@ -55,3 +55,11 @@ def public_address():
         return _fastapi.HTTPException(status_code=400, detail="The blockchain is invalid")
 
     return blockchain.generate_public_address()
+
+
+@app.get("/blockchain/total_coins/")
+def total_coins():
+    if not blockchain.is_chain_valid():
+        return _fastapi.HTTPException(status_code=400, detail="The blockchain is invalid")
+
+    return blockchain.get_coins()
